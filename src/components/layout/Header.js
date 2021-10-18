@@ -1,19 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const Header = () => {
 
-    const [navState, setNavState] = useState({show : false})
+    const [navState, setNavState] = useState({show : false , scroll_header : false });
 
-    const {show}  = navState
+    const {show ,  scroll_header }  = navState;
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+    }, []);
+
+    const handleScroll  = (e) => {
+        let scrolltop = e.srcElement.scrollingElement.scrollTop;
+
+        if( scrolltop >= 50 ) {
+            setNavState({ ...navState , scroll_header : true });
+        }else{
+            setNavState({ ...navState , scroll_header : false });
+        }
+    }  
+
 
     const toggleMenu = () => {
 
-        setNavState({show : !show })
+        setNavState({ ...navState , show : !show })
         
     }
 
     return (
-        <header className="header" id="header">
+        <header className={`header ${scroll_header ? 'scroll-header' : '' }`} id="header">
             <nav className="nav container">
                 <a href="#" className="nav__logo">
                     <img src="img/logo.png" alt="logo" className="nav__logo-img" />

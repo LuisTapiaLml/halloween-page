@@ -5,6 +5,12 @@
     top: 0;
     left: 0;
     z-index: var(--z-fixed);
+    transition: all .3s ease;
+}
+
+
+.scroll-header{
+    background: var(--container-color) ;  
 }
 
 nav {
