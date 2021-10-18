@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'reset';
+@import './reusable_clases';
+
+// layout
+@import './layout/header';
+
+//elements
+@import 'elements/buttons';
+@import 'elements/swipper';
+
+//components
+@import './components/home';
+@import './elements/swipper';

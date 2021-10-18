@@ -1,0 +1,21 @@
+.swiper-pagination {
+    position: initial;
+    margin-top: var(--mb-1);
+}
+
+.swiper-pagination-bullet{
+    width: 5px;
+    height: 5px;
+    background: var(--title-color)!important;
+    opacity: 1;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0 .5rem;
+}
+
+.swiper-pagination-bullet-active{
+    width: 1.5rem!important;
+    height: 5px!important;
+    border-radius: .5rem!important;
+}
