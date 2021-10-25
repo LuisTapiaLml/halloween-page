@@ -9,7 +9,6 @@ export const Halloween = () => {
         <Header/>
         <Main/>
         <Footer/>
-        <footer className="footer section"></footer>
        </>
     )
 }

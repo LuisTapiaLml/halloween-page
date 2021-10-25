@@ -11,21 +11,53 @@ export const New = () => {
 
     const [width, height] = useWindowSize();
 
-    const [stateItemsCount, setStateItemsCount] = useState(1);
+    const [stateItemsCount, setStateItemsCount] = useState({ 
+        items : 1 ,
+        gap : 5 
+    });
 
     useEffect(() => {
+
         console.log(width);
 
-        if( width > 520 ){
-            setStateItemsCount(2)
+        if( width <= 400 ){
+            setStateItemsCount({
+                gap: 150 ,
+                items : 1
+            })
 
-        }else if( width > 760 ){
-            setStateItemsCount(3)
-        }else{
-            setStateItemsCount(1)
+        }else if( width < 576 ){
+            setStateItemsCount({
+                gap: 150 ,
+                items : 2 
+            })
+
+        }
+
+        
+        
+        if( width > 576 ){
+            setStateItemsCount({
+                gap: 1 ,
+                items : 2 
+            })
+
+        }
+
+        if( width > 760 ){
+            setStateItemsCount({
+                gap: 18 ,
+                items : 3
+            })
+        }  
+
+        if( width > 960 ){
+            setStateItemsCount({
+                gap: 320 ,
+                items : 4
+            })
         }
         
-         
     }, [width])
 
     return (
@@ -36,10 +68,10 @@ export const New = () => {
                 <Swiper
                     modules={[Virtual]} 
                     className="new-swiper"
-                    spaceBetween={18}
+                    spaceBetween={stateItemsCount.gap}
                     centeredSlides = {true}
                     loop = {true}
-                    slidesPerView = {1}
+                    slidesPerView = {stateItemsCount.items}
                     pagination={{
                         "dynamicBullets": true,
                     }}
