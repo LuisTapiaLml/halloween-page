@@ -8,9 +8,9 @@ export const Category = () => {
 
             <div className="category__container container grid">
                 {
-                    categories.map(category => (
+                    categories.map((category , index ) => (
 
-                        <div className="category__data">
+                        <div key={`key_category_${index}]`} className="category__data">
                             <img src={category.img} alt="category 1" className="category__img" />
                             <h3 className="category__title">{category.title}</h3>
                             <p className="category__description">{category.description}</p>

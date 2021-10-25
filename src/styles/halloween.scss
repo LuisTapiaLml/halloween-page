@@ -4,6 +4,7 @@
 
 // layout
 @import './layout/header';
+@import './layout/footer';
 
 //elements
 @import 'elements/buttons';
@@ -15,3 +16,6 @@
 @import './components/category';
 @import './components/about';
 @import './components/trick';
+@import './components/discount';
+@import './components/new';
+@import './components/newsletter';

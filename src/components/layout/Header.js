@@ -38,7 +38,7 @@ export const Header = () => {
                 <div className={`nav__menu   ${ show ? 'show-menu' : '' } `}  id="nav-menu">
                     <ul className="nav__list">
                         <li 
-                            className="nav__item" 
+                            className="nav__item active-link" 
                             onClick={toggleMenu}
                         >
                             <a href="#" className="nav__link">Home</a>

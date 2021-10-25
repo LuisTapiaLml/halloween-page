@@ -1,27 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { home_sliders } from '../../data/home_sliders';
 
 // import Swiper core and required modules
-import SwiperCore, {
-    Pagination
-} from 'swiper';
+import SwiperCore, { Pagination } from 'swiper';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
 
 export const Home = () => {
+
+    const [width, height] = useWindowSize();
+
+    const [stateItemsCount, setStateItemsCount] = useState(1);
+
+    useEffect(() => {
+        console.log(width);
+
+        if( width > 520 ){
+            setStateItemsCount(2)
+
+        }else if( width > 760 ){
+            setStateItemsCount(3)
+        }else{
+            setStateItemsCount(1)
+        }
+        
+         
+    }, [width])
     return (
         <section className="home container" id="home">
             <Swiper
                 className="home-swiper"
                 spaceBetween={30}
-                // loop={true}
-                slidesPerView={1}
+                
+                slidesPerView = {1}
                 pagination={{
                     "dynamicBullets": true
                 }}
+                loop={true}
             >
                 {
                     home_sliders.map((slide_info, index) => (

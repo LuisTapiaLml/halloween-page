@@ -9,9 +9,9 @@ export const TrickTreat = () => {
 
             <div className="trick__container container grid">
                 {
-                    tricks_treats.map(trick => (
+                    tricks_treats.map((trick , index) => (
 
-                        <div className="trick__content">
+                        <div  key = {`key_trick_${index}`} className="trick__content">
                             <img src={trick.img} alt="trick img" className="trick__img" />
                             <h3 className="trick__title">{trick.title}</h3>
                             <span className="trick__subtitle">{trick.subtitle}</span>

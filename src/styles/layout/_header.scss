@@ -99,3 +99,19 @@ nav {
     top: 0;
 }
 
+
+.active-link{
+    position: relative;
+
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: -0.75rem;
+        left: 45%;
+        width: 5px;
+        height: 5px;
+        border-color: var(--title-color);
+        border-radius: 50%;
+    }
+}
+
